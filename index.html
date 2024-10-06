@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Solar System</title>
+  </head>
+  <body>
+    <div class="container-intro">
+      <div class="space-logo"><img src="src/Space_Apps_Logo.png" alt="Space App Logo" width="250px"></div>
+      <div class="box-intro">
+        <div class="team-logo"></div>
+        <div class="description">START YOUR EXPERIENCE</div>
+        <div class="startbtn">Start</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="SLIDA">
+        <input type="number" id="sliderValue" min="0" step="0.1" value="1" onchange="changeSpeed(this.value)" style="max-width: 60px;">
+        <label for="sliderValue" style="color:white; margin-left:10px"> days / second</label>
+        <input type="range" id="SLIDA" class="slider" min="0" max="3650" value="1" step="0.1" oninput="changeSpeed(this.value)">
+        <output for="mySlider" id="volumeOutput"></output>
+      </div>
+    </div>
+    <label class="burger" for="burger">
+      <input type="checkbox" id="burger" onclick="slide()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <nav style="position: fixed; top: 0; left: 0; right: 0; background: rgba(0,0,0,0.7); padding: 10px; z-index: 1000;">
+    <a href="#" style="color: white; margin-right: 15px;">Home</a>
+    <a href="learn-page.html" target="_blank" style="color: white;">Learn</a>
+    </nav>
+  <div class="sidebar">
+      <div class="side-logo"><img src="src/breakdown.png" alt="breakdown^2" width="65%"></div>
+      <div class="features">
+          <div class="title-feature">Features</div>
+          <div class="categories feature">
+              <div class="category label">
+                  <div class="category-title">Labels : </div>
+                  <div class="category-toggle on" id="label-toggle" state="on" onclick="EnableText()">On</div>
+              </div>
+              <div class="category orbits">
+                  <div class="category-title">Planet Orbits : </div>
+                  <div class="category-toggle on" id="label-orbits" state="on" onclick="togglePlanetOrbits()">On</div>
+              </div>
+              <div class="category orbits">
+                <div class="category-title">NEO Orbits : </div>
+                <div class="category-toggle on" id="label-orbits" state="on" onclick="toggleNEOOrbits()">On</div>
+              </div>
+              <div class="category orbits">
+                <div class="category-title">Satellite Orbits: </div>
+                <div class="category-toggle on" id="label-orbits" state="on" onclick="toggleSatelliteOrbits()">On</div>
+              </div>
+          </div>
+      </div>
+      <div class="about-page">
+          <a href="#">About</a>
+      </div>
+  </div>
+  <div class="information">
+      <div class="planet-name" id="planet-name"></div>
+      <div class="planet-info">
+        <div class="info-title">Size</div>
+        <div class="info-facts"><span id="size"></span> KM</div>
+        <div class="info-title">Semi Major Axis (SMA)</div>
+        <div class="info-facts"><span id="sma"></span> AU</div>
+        <div class="info-title">Orbital Eccentricity</div>
+        <div class="info-facts"><span id="oe"></span> </div>
+        <div class="info-title">Rotation Period</div>
+        <div class="info-facts"><span id="rp"></span> Days</div>
+        <div class="info-title">Period</div>
+        <div class="info-facts"><span id="period"></span> Days</div>
+        <div class="info-title">Inclination</div>
+        <div class="info-facts"><span id="inclination"></span> Degrees</div>
+        <div class="info-title">Description</div>
+        <div class="info-facts" id="desc"></div>
+      </div>
+  </div>
+    <canvas id="orrery"></canvas>
+    <script type="module" src="sidebar.js"></script>
+    <script type="module" src="objectGet.js"></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/OrbitToggle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  overflow:hidden;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.container {
+  position:absolute;
+  display:flex;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+.PlanetLabels {
+  transition: opacity 0.5s;
+}
+
+@font-face {
+  font-family: SpaceMono;
+  src: url(SpaceMono-Regular.ttf);
+}
+
+html, body {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: black;
+  font-family: SpaceMono, 'Times New Roman', Times, serif;
+}
+
+.SLIDA {
+  width: 100vw; 
+  height: 12.5vh;
+  position: fixed;
+  right: 0;
+  bottom: 0; 
+  border-radius: 17px;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  pointer-events: all;
+}
+
+.slider-value {
+  position: absolute;
+  top: -30px; /* Position the text above the slider */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center the text above the thumb */
+  color: #ddd;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.slider {
+  width: 90vw; 
+  margin: 0;
+  position:fixed;
+  bottom: 3vw;
+  padding: 0;
+  -webkit-appearance: none; 
+  appearance: none;
+  height: 1px; 
+  background: #000000; 
+  outline: none; 
+  opacity: 0.9; 
+  transition: opacity 0.2s;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; 
+  margin-top: -7px;
+  display: flex;
+  width: 20px; 
+  height: 20px; 
+  border-radius: 50%; 
+  background: white; /* Thumb color */
+  border: 1px solid black; /* Black outline */
+  cursor: pointer; /* Change the cursor on hover */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* shadow */
+  transition: background-color 0.3s; /* transition */
+}
+
+/* Thumb hover effect */
+.slider::-webkit-slider-thumb:hover {
+  background-color: #2a0eff; /* Slight color change on hover  */
+}
+
+.slider::-moz-range-thumb { /* this some fire fox shit dont mind it */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid black;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.3s;
+}
+
+.slider::-moz-range-track {
+  height: 5px;
+  background: #2a0eff;
+  border-radius: 5px;
+}
+.slider::-webkit-slider-runnable-track {
+  background: #ddd; 
+  border-radius: 5px;
+  height: 5px; 
+}
+
+.container-intro{
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  overflow-y: hidden;
+  transition: top 1.5s ease-out, opacity 1.5s ease-out;
+}
+
+.container-intro.fade-out{
+  top: -100vh;
+  opacity: 0;
+}
+
+.space-logo{
+  margin: 10px 0 0 10px;
+}
+
+.box-intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100vw;
+  height: 75vh;
+}
+
+.team-logo{
+  height: 296px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("src/breakdown.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.startbtn {
+  padding: 17px 40px;
+  border-radius: 50px;
+  cursor: pointer;
+  border: 0;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 0 8px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+.startbtn:hover {
+  letter-spacing: 3px;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 0%);
+  box-shadow: rgb(100, 100, 100) 0px 7px 29px 0px;
+}
+
+.startbtn:active {
+  letter-spacing: 3px;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(0, 0%, 100%);
+  transform: translateY(10px);
+  transition: 100ms;
+}
